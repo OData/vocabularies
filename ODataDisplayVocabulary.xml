@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Schema Namespace="Org.OData.Display.V1" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" Alias="Self">
+
+  <!-- DisplayName is the alternate name or you can call the 'Friendly Name' 
+   of the Container, Table or Column. If no 'DisplayName' is provided then 
+   the 'name' of Container, Table or Column is picked as the default name.  -->
+  <ValueTerm Name="DisplayName" Type="Edm.String" />
+
+  <!-- 'Description' vocabulary is used to provide additional information about 
+ an element  -->
+  <ValueTerm Name="Description" Type="Edm.String" />
+
+</Schema>

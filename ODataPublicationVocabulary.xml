@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Schema Namespace="Org.OData.Publication.V1" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" Alias="Self">
+
+  <!-- PublisherName provides the name of the publisher for a given offer. -->
+  <ValueTerm Name="PublisherName" Type="Edm.String" />
+
+
+  <!-- PublisherId provides the ID of the publisher for a given offer. -->
+  <ValueTerm Name="PublisherId" Type="Edm.String" />
+
+
+  <!-- Keywords are like search terms. For example 'jQuery Mobile' can have 
+  Keywords: jquery, plugins, phone, touch, ipad, blackberry -->
+  <ValueTerm Name="Keywords" Type="Collection(Edm.String)" />
+
+
+  <!-- Attribution is used to follow the copyright law. It is acknowledgement as credit to the 
+  author of a work which is used or appears in someplace else. As an example for Wikipedia 
+  data, each table may have a URL point to the original Wikipedia page from where the data 
+  was collected  -->
+  <ValueTerm Name="AttributionUrl" Type="Edm.String" />
+
+
+  <!-- DocumentationUrl provides the URL to where the documentation live. Users can choose 
+  to follow the Documentation URL to get more details about the Offer or the Table contents -->
+  <ValueTerm Name="DocumentationUrl" Type="Edm.String" />
+
+
+  <!-- TermsOfUseUrl will point to any legal term of use associated with a publication.  -->
+  <ValueTerm Name="TermsOfUseUrl" Type="Edm.String" />
+
+
+  <!-- PrivacyPolicyUrl will point to the privacy policy document/EULA associated with a publication -->
+  <ValueTerm Name="PrivacyPolicyUrl" Type="Edm.String" />
+
+
+  <!--LastModifed shows how fresh the data is. For example in case of Wikipedia it may show the 
+  last time the page was crawled to generate the Table. -->
+  <ValueTerm Name="LastModified" Type="Edm.DateTimeOffset" />
+
+  <!-- 'ImageUrl' provides location of the image. This image could be the logo of the entity 
+  who has published the data. For example the logo of Weather.com -->
+  <ValueTerm Name="ImageUrl" Type="Edm.String" />
+
+</Schema>
