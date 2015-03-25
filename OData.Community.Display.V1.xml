@@ -1,8 +1,3 @@
-<!--
-  Copyright (c) Microsoft Corporation.  All rights reserved.
-  Licensed under the MIT License.  See license.md at
-  https://github.com/OData/vocabularies for license information. 
--->
 <?xml version="1.0" ?>
 <edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/os/vocabularies/Org.OData.Core.V1.xml">
