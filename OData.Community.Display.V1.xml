@@ -9,7 +9,7 @@
     <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
   </edmx:Reference>
   <edmx:DataServices>
-    <Schema Namespace="OData.Community.Display" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Schema Namespace="OData.Community.Display.V1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
       <Term Name="DisplayableValue" Type="Edm.String">
         <Annotation Term="Core.Description">
           <String>Provides a value designed primarily for display. For additional details see https://github.com/OData/vocabularies/blob/master/OData.Community.Display.V1.md</String>
