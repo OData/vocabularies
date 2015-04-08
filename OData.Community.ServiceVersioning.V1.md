@@ -152,9 +152,9 @@ Content-Type: application/json
 ```
 
 ###2.3	Service Responses
-When services communicate that their Version Information is required in requests, but a request is received without it, a service is expected to respond with an HTTP error status such as 400 Bad Request with a message indicating that the version header or query string parameter is required.
+When services communicate that their Version Information is required in requests, but a request is received without it, a service is expected to respond with an HTTP error status such as `400 Bad Request` with a message indicating that the version header or query string parameter is required.
 
-When a client requests a version of the service that the service understands but cannot respond compatibly with, the service is expected to respond with HTTP error status such as 501 Not Implemented or 400 Bad Request.  Error message text should also communicate that the requested version of the service is not available.
+When a client requests a version of the service that the service understands but cannot respond compatibly with, the service is expected to respond with HTTP error status such as `501 Not Implemented` or `400 Bad Request`.  Error message text should also communicate that the requested version of the service is not available.
 
 When the client requests a version that the service is compatible with, the service is expected to return a version of results that includes only non-breaking changes from the metadata that would have been provided for the requested version of the service.
 
@@ -441,7 +441,7 @@ Content-Type: application/json
 ```
 
 ###3.3	Service Responses
-When services communicate that their Version Information is required on client calls, but a client calls without it. A service is expected to respond with HTTP error status such as `400 Bad Request` with a message indicating that the version header or query string parameter is required.
+When services communicate that their Version Information is required on client calls, but a client calls without it, the service is expected to respond with HTTP error status such as `400 Bad Request` with a message indicating that the version header or query string parameter is required.
 
 When a client requests a version of the service that the service understands but cannot respond compatibly with, the service is expected to respond with HTTP error status such as `501 Not Implemented` or `400 Bad Request`.  Error message text should also communicate that the requested version of the service is not available.
 
