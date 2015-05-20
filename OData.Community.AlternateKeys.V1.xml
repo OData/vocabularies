@@ -2,14 +2,14 @@
 <edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
   <edmx:DataServices>
 
-    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="OData.Community.AlternateKeys.V1" Alias="AlternateKeys">
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="OData.Community.AlternateKeys.V1" Alias="Keys">
 
-      <Term AppliesTo="EntityType EntitySet NavigationProperty" Type="Collection(AlternateKeys.AlternateKey)" Name="AlternateKeys">
+      <Term AppliesTo="EntityType EntitySet NavigationProperty" Type="Collection(Keys.AlternateKey)" Name="AlternateKeys">
         <Annotation Term="Core.Description" String="Communicates available alternate keys"/>
       </Term>
 
       <ComplexType Name="AlternateKey">
-        <Property Type="Collection(AlternateKeys.PropertyRef)" Name="Key">
+        <Property Type="Collection(Keys.PropertyRef)" Name="Key">
           <Annotation Term="Core.Description" String="The set of properties that make up this key"/>
         </Property>
       </ComplexType>

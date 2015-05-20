@@ -42,24 +42,28 @@ When a service supports alternate keys, it will annotate entity type metadata to
 The AlternateKeys annotation term will contain a collection of key definitions, each of which contain a collection of PropertyRef’s.  It will be declared as follows:
 
 ```xml
-<Term AppliesTo="EntityType EntitySet NavigationProperty" Type="Collection(Core.AlternateKey)" Name="Core.AlternateKeys">
-  <Annotation Term="Core.Description" String="Communicates available alternate keys"/>
-</Term>
+<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="OData.Community.AlternateKeys.V1" Alias="Keys">
 
-<ComplexType Name="AlternateKey">
-  <Property Type="Collection(Core.PropertyRef)" Name="Key">
-    <Annotation Term="Core.Description" String="the set of properties that make up this key"/>
-  </Property>
-</ComplexType>
+  <Term AppliesTo="EntityType EntitySet NavigationProperty" Type="Collection(Keys.AlternateKey)" Name="AlternateKeys">
+    <Annotation Term="Core.Description" String="Communicates available alternate keys"/>
+  </Term>
 
-<ComplexType Name="PropertyRef">
-  <Property Type="Edm.PropertyPath" Name="Name">
-    <Annotation Term="Core.Description" String="A path expression resolving to a primitive property of the entity type itself or to a primitive property of a complex property (recursively) of the entity type. The names of the properties in the path are joined together by forward slashes."/>
-  </Property>
-  <Property Type="Edm.String" Name="Alias">
-    <Annotation Term="Core.Description" String="A SimpleIdentifier that MUST be unique within the set of aliases, structural and navigation properties of the containing entity type that MUST be used in the key predicate of URLs"/>
-  </Property>
-</ComplexType>
+  <ComplexType Name="AlternateKey">
+    <Property Type="Collection(Keys.PropertyRef)" Name="Key">
+      <Annotation Term="Core.Description" String="The set of properties that make up this key"/>
+    </Property>
+  </ComplexType>
+
+  <ComplexType Name="PropertyRef">
+    <Property Type="Edm.PropertyPath" Name="Name">
+      <Annotation Term="Core.Description" String="A path expression resolving to a primitive property of the entity type itself or to a primitive property of a complex property (recursively) of the entity type. The names of the properties in the path are joined together by forward slashes."/>
+    </Property>
+    <Property Type="Edm.String" Name="Alias">
+      <Annotation Term="Core.Description" String="A SimpleIdentifier that MUST be unique within the set of aliases, structural and navigation properties of the containing entity type that MUST be used in the key predicate of URLs"/>
+    </Property>
+  </ComplexType>
+
+</Schema>
 ```
 
 The `AlternateKey` and `PropertRef` complex types (and their properties) are intended to directly mirror the `edm:Key` and `edm:PropertyRef` elements in the EntityType metadata with the one exception being that alternate keys may be based on properties that are nullable.
@@ -77,7 +81,7 @@ The following metadata described a Person entity type with an alternate key on t
     <PropertyRef Name="ID" />
   </Key>
         
-  <Annotation Term="Core.AlternateKeys">
+  <Annotation Term="Keys.AlternateKeys">
     <Collection>    
       <Record>
         <PropertyValue Property="Key">
@@ -105,7 +109,7 @@ The following metadata described a Person entity type with an alternate key defi
     <PropertyRef Name="ID" />
   </Key>
         
-  <Annotation Term="Core.AlternateKeys">
+  <Annotation Term="Keys.AlternateKeys">
     <Collection>
       <Record>
         <PropertyValue Property="Key">
@@ -137,7 +141,7 @@ The following metadata described a Person entity type with an alternate key defi
     <PropertyRef Name="ID" />
   </Key>
         
-  <Annotation Term="Core.AlternateKeys">
+  <Annotation Term="Keys.AlternateKeys">
     <Collection>
       <Record>
         <PropertyValue Property="Key">
@@ -172,7 +176,7 @@ The following metadata described a Person entity type with two alternate key def
     <PropertyRef Name="ID" />
   </Key>
         
-  <Annotation Term="Core.AlternateKeys">
+  <Annotation Term="Keys.AlternateKeys">
     <Collection>    
       <Record>
         <PropertyValue Property="Key">
