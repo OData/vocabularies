@@ -230,7 +230,7 @@ Any request using the simpleKey format should always be interpreted as expressin
 
 When a request uses the compoundKey format, services should identify a matching key definition (either the primary entity key, or an alternate key) that uses the exact set of named properties provided.  
 
-Using the key declaration example above, the following examples would allow retrieval of people matched with the defined keys:
+Using the key declaration examples above, the following examples would allow retrieval of people matched with the defined keys:
 
 ```http
 http://host/service/persons(id=123) (matches entity key exactly)
@@ -243,7 +243,7 @@ If the set of properties does not match a defined key or alternate key, the serv
 ####2.2.2	Use of Alternate Keys
 Alternate key syntax should be supported in all the places that the canonical URL for an entity is used, including in in URL’s for data service requests as well as alternative entity-id’s for bind operations.
 
-#####Address and Entity	
+#####Address an Entity	
 
 ```http
 GET /service/persons(ssn=123-456-7890)  HTTP/1.1
@@ -282,8 +282,10 @@ Services may allow null values in properties that are used for alternate keys, b
 
 For example, both of these requests should always return HTTP Status 404 (not found):
 
+```http
 http://host/service/persons(ID=null)
 http://host/service/persons(Country=USA,Passport=null) 
+```
 
 ####2.2.4	Entity Urls in Service Responses
 Support for alternate keys does not imply or require the modification of canonical urls returned by the service that represent links to entities (for example, odata.id, ReadUrl, etc.).  Services should continue to return stable references to resources that do not change relative to the access mechanism used by the client to retrieve those references.
