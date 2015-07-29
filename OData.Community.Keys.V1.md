@@ -42,7 +42,7 @@ When a service supports alternate keys, it will annotate entity type metadata to
 The AlternateKeys annotation term will contain a collection of key definitions, each of which contain a collection of PropertyRef’s.  It will be declared as follows:
 
 ```xml
-<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="OData.Community.AlternateKeys.V1" Alias="Keys">
+<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="OData.Community.Keys.V1" Alias="Keys">
 
   <Term AppliesTo="EntityType EntitySet NavigationProperty" Type="Collection(Keys.AlternateKey)" Name="AlternateKeys">
     <Annotation Term="Core.Description" String="Communicates available alternate keys"/>
