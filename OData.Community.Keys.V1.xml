@@ -2,7 +2,7 @@
 <edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
   <edmx:DataServices>
 
-    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="OData.Community.AlternateKeys.V1" Alias="Keys">
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="OData.Community.Keys.V1" Alias="Keys">
 
       <Term AppliesTo="EntityType EntitySet NavigationProperty" Type="Collection(Keys.AlternateKey)" Name="AlternateKeys">
         <Annotation Term="Core.Description" String="Communicates available alternate keys"/>
