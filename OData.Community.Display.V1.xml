@@ -10,10 +10,10 @@
   </edmx:Reference>
   <edmx:DataServices>
     <Schema Namespace="OData.Community.Display.V1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
-      <Term Name="DisplayableValue" Type="Edm.String">
-        <Annotation Term="Core.Description">
-          <String>Provides a value designed primarily for display. For additional details see https://github.com/OData/vocabularies/blob/master/OData.Community.Display.V1.md</String>
-        </Annotation>
+      <Term Name="FormattedValue" Type="Edm.String">
+        <Annotation Term="Core.Description"
+          String="A human-readable text for values of the annotated property or instances of the annotated type. Value MUST be a dynamic expression when used as metadata annotation.  For additional details see https://github.com/OData/vocabularies/blob/master/OData.Community.Display.V1.md" />
+        <Annotation Term="Core.IsLanguageDependent" />
       </Term>
     </Schema>
   </edmx:DataServices>
