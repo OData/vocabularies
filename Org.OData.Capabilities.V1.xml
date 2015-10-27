@@ -323,7 +323,7 @@ Overview:
         <Property Name="Selectable" Type="Edm.Boolean" DefaultValue="true">
           <Annotation Term="Core.Description" String="$select is supported" />
         </Property>
-        <Property Name="NonSelectableProperties" Type="Collection(Edm.NavigationPropertyPath)">
+        <Property Name="NonSelectableProperties" Type="Collection(Edm.PropertyPath)">
           <Annotation Term="Core.Description" String="These properties cannot be used in $select expressions" />
         </Property>
       </ComplexType>
