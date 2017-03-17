@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/os/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="Core"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+    <Schema Namespace="OData.Community.ServiceVersioning.V1" Alias="ServiceVersioning" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <Annotation Term="Core.Description">
+        <String>
+          The ServiceVersioning vocabulary provides a way for services to describe the version of the service associated with the returned metadata and the mechanism clients should
+          use to communicate this version information in future requests to the service.
+        </String>
+      </Annotation>
+      <Term Name="ServiceVersionInfo" Type="ServiceVersioning.VersionInfo" AppliesTo="EntityContainer">
+        <Annotation Term="Core.Description" String="Communicates service version information"/>
+      </Term>
+      <ComplexType Name="VersionInfo">
+        <Property Type="Edm.String" Name="CurrentVersion">
+          <Annotation Term="Core.Description" String="The version of the service represented in the annotated metadata"/>
+        </Property>
+        <Property Type="Edm.Boolean" Name="Required" DefaultValue="false">
+          <Annotation Term="Core.Description" String="Indicates whether the service requires that the version be included in client requests."/>
+        </Property>
+        <Property Type="Edm.String" Name="VersionHeaderName" Nullable="true">
+          <Annotation Term="Core.Description" String="The name of the header clients should use to communicate version information."/>
+        </Property>
+        <Property Type="Edm.String" Name="VersionQueryStringParameterName" Nullable="true">
+          <Annotation Term="Core.Description" String="The name of the query string parameter clients should use to communicate version information."/>
+        </Property>
+      </ComplexType>
+      <Term Name="ScopedServiceVersionInfo" Type="Collection(ServiceVersioning.ScopedVersionInfo)" AppliesTo="EntityContainer">
+        <Annotation Term="Core.Description" String="Communicates version information for specific scopes within the service"/>
+      </Term> 
+      <ComplexType Name="ScopedVersionInfo" BaseType="ServiceVersioning.VersionInfo">
+        <Property Type="Edm.String" Name="Scope" Nullable="true">
+          <Annotation Term="Core.Description" String="The scope to which this version information applies."/>
+        </Property>
+      </ComplexType>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
