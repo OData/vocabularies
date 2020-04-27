@@ -316,6 +316,18 @@ Overview:
         <Member Name="group" Value="16" />
       </EnumType>
 
+      <Term Name="SelectRestrictions" Type="Capabilities.SelectRestrictionsType" AppliesTo="EntitySet">
+        <Annotation Term="Core.Description" String="Restrictions on $select expressions" />
+      </Term>
+      <ComplexType Name="SelectRestrictionsType">
+        <Property Name="Selectable" Type="Edm.Boolean" DefaultValue="true">
+          <Annotation Term="Core.Description" String="$select is supported" />
+        </Property>
+        <Property Name="NonSelectableProperties" Type="Collection(Edm.PropertyPath)">
+          <Annotation Term="Core.Description" String="These properties cannot be used in $select expressions" />
+        </Property>
+      </ComplexType>
+
       <!-- Data Modification Capabilities -->
 
       <Term Name="InsertRestrictions" Type="Capabilities.InsertRestrictionsType" AppliesTo="EntitySet">
